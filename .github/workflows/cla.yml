@@ -1,4 +1,9 @@
 name: "CLA Assistant"
+permissions:
+  contents: write
+  pull-requests: write
+  metadata: read
+  
 on:
   issue_comment:
     types: [created]
