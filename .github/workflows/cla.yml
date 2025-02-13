@@ -13,6 +13,11 @@ on:
 jobs:
   CLAAssistant:
     runs-on: ubuntu-latest
+    permissions:
+      # Adding job-level permissions for extra security
+      contents: write
+      pull-requests: write
+      metadata: read
     steps:
       - name: "CLA Assistant"
         if: (github.event.comment.body == 'recheck' || github.event.comment.body == 'I have read the CLA Document and I hereby accept and agree to be bound by its terms') || github.event_name == 'pull_request_target'
