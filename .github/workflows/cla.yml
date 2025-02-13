@@ -3,6 +3,7 @@ permissions:
   contents: write
   pull-requests: write
   metadata: read
+  issues: write  
   
 on:
   issue_comment:
@@ -18,6 +19,7 @@ jobs:
       contents: write
       pull-requests: write
       metadata: read
+      issues: write
     steps:
       - name: "CLA Assistant"
         if: (github.event.comment.body == 'recheck' || github.event.comment.body == 'I have read the CLA Document and I hereby accept and agree to be bound by its terms') || github.event_name == 'pull_request_target'
